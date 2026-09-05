@@ -65,6 +65,131 @@ Toggle the flag with the Media layer's top-row inner-column key (hold Esc, then 
 Note: ZMK main has renamed ~nice_nano_v2~ to ~nice_nano@2//zmk~, which the Miryoku workflows do not yet support.  Until that is fixed upstream, set the ~branches~ option to ~zmkfirmware/zmk/v0.3-branch~ when using the [[#build-inputs][Build Inputs]] workflow (e.g. board ~nice_nano_v2~, shield ~temper_left,temper_right~).
 
 
+** Layers
+
+Layers as compiled for this fork (Colemak-DH alphas, default Nav, Mac clipboard).  Each table is the left hand (pinky to inner column) then the right hand (inner column to pinky), three rows plus the thumb row.  "A / GUI" means tap for A, hold for GUI; "Space / Nav" means tap for Space, hold for the Nav layer.  "to X" switches the default layer; Boot enters the bootloader.  Empty cells are unused.
+
+*** Base (Colemak-DH)
+
+Home-row mods: hold for the modifier, tap for the letter.  Thumbs: hold for the layer, tap for the key.
+
+| Q          | W         | F           | P           | B            | J           | L          | U         | Y         | '          |
+| A / GUI    | R / Alt   | S / Ctrl    | T / Shift   | G            | M           | N / Shift  | E / Ctrl  | I / Alt   | O / GUI    |
+| Z / Button | X / AltGr | C           | D           | V            | K           | H          | ,         | . / AltGr | / / Button |
+|------------+-----------+-------------+-------------+--------------+-------------+------------+-----------+-----------+------------|
+|            |           | Esc / Media | Space / Nav | Tab / Window | Enter / Sym | Bspc / Num | Del / Fun |           |            |
+
+*** Extra (QWERTY)
+
+Alternative base layer, same mods and thumbs.
+
+| Q          | W         | E           | R           | T            | Y           | U          | I         | O         | P          |
+| A / GUI    | S / Alt   | D / Ctrl    | F / Shift   | G            | H           | J / Shift  | K / Ctrl  | L / Alt   | ' / GUI    |
+| Z / Button | X / AltGr | C           | V           | B            | N           | M          | ,         | . / AltGr | / / Button |
+|------------+-----------+-------------+-------------+--------------+-------------+------------+-----------+-----------+------------|
+|            |           | Esc / Media | Space / Nav | Tab / Window | Enter / Sym | Bspc / Num | Del / Fun |           |            |
+
+*** Tap
+
+Base with no hold functions, for gaming or typing tests.
+
+| Q   | W   | F   | P     | B   | J     | L    | U   | Y   | '   |
+| A   | R   | S   | T     | G   | M     | N    | E   | I   | O   |
+| Z   | X   | C   | D     | V   | K     | H    | ,   | .   | /   |
+|-----+-----+-----+-------+-----+-------+------+-----+-----+-----|
+|     |     | Esc | Space | Tab | Enter | Bspc | Del |     |     |
+
+*** Button (hold Z or /)
+
+Clipboard on both hands, mods on the home row, mouse buttons on the thumbs.
+
+| Undo | Cut | Copy   | Paste  | Redo   | Redo   | Paste  | Copy   | Cut | Undo |
+| GUI  | Alt | Ctrl   | Shift  |        |        | Shift  | Ctrl   | Alt | GUI  |
+| Undo | Cut | Copy   | Paste  | Redo   | Redo   | Paste  | Copy   | Cut | Undo |
+|------+-----+--------+--------+--------+--------+--------+--------+-----+------|
+|      |     | Mouse3 | Mouse1 | Mouse2 | Mouse2 | Mouse1 | Mouse3 |     |      |
+
+*** Nav (hold Space)
+
+Arrows and navigation on the right hand; clipboard on the top row.
+
+| Boot | to Tap | to Extra | to Base |     | Redo     | Paste | Copy | Cut  | Undo  |
+| GUI  | Alt    | Ctrl     | Shift   |     | CapsWord | Left  | Down | Up   | Right |
+|      | AltGr  | to Num   | to Nav  |     | Ins      | Home  | PgDn | PgUp | End   |
+|------+--------+----------+---------+-----+----------+-------+------+------+-------|
+|      |        |          |         |     | Enter    | Bspc  | Del  |      |       |
+
+*** Window (hold Tab)
+
+AeroSpace window management; every key sends ctrl-alt plus the key.  See [[#window-layer][Window Layer]].
+
+| Boot | to Tap | to Extra | to Base   |     | ws 1       | ws 2    | ws 3    | ws 4    | ws 5      |
+| GUI  | Alt    | Ctrl     | Shift     |     | fullscreen | focus ← | focus ↓ | focus ↑ | focus →   |
+|      | AltGr  | to Sym   | to Window |     | float      | shrink  | grow    | orient  | tiles/acc |
+|------+--------+----------+-----------+-----+------------+---------+---------+---------+-----------|
+|      |        |          |           |     |            | balance |         |         |           |
+
+*** Media (hold Esc)
+
+Media, Bluetooth, output, and the clipboard toggle in place of RGB toggle.
+
+| Boot | to Tap | to Extra | to Base  |     | toggle Clip | RGB eff | RGB hui | RGB sai | RGB bri |
+| GUI  | Alt    | Ctrl     | Shift    |     | ExtPwr      | Prev    | Vol-    | Vol+    | Next    |
+|      | AltGr  | to Fun   | to Media |     | USB/BT      | BT 0    | BT 1    | BT 2    | BT 3    |
+|------+--------+----------+----------+-----+-------------+---------+---------+---------+---------|
+|      |        |          |          |     | Stop        | Play    | Mute    |         |         |
+
+*** Num (hold Backspace)
+
+Numpad on the left hand.
+
+| [   | 7   | 8   | 9   | ]   |     | to Base | to Extra | to Tap | Boot |
+| ;   | 4   | 5   | 6   | =   |     | Shift   | Ctrl     | Alt    | GUI  |
+| `   | 1   | 2   | 3   | \   |     | to Num  | to Nav   | AltGr  |      |
+|-----+-----+-----+-----+-----+-----+---------+----------+--------+------|
+|     |     | .   | 0   | -   |     |         |          |        |      |
+
+*** Sym (hold Enter)
+
+Shifted Num layer.  "pipe" is the | key.
+
+| {   | &   | *   | (   | }    |     | to Base | to Extra  | to Tap | Boot |
+| :   | $   | %   | ^   | +    |     | Shift   | Ctrl      | Alt    | GUI  |
+| ~   | !   | @   | #   | pipe |     | to Sym  | to Window | AltGr  |      |
+|-----+-----+-----+-----+------+-----+---------+-----------+--------+------|
+|     |     | (   | )   | _    |     |         |           |        |      |
+
+*** Fun (hold Delete)
+
+Function keys on the left hand.
+
+| F12 | F7  | F8   | F9    | PrtSc |     | to Base | to Extra | to Tap | Boot |
+| F11 | F4  | F5   | F6    | ScrLk |     | Shift   | Ctrl     | Alt    | GUI  |
+| F10 | F1  | F2   | F3    | Pause |     | to Fun  | to Media | AltGr  |      |
+|-----+-----+------+-------+-------+-----+---------+----------+--------+------|
+|     |     | Menu | Space | Tab   |     |         |          |        |      |
+
+*** NavClip (Nav while Clip is on)
+
+Overlay: generic clipboard replaces the Mac clipboard; ▽ is transparent.
+
+| ▽   | ▽   | ▽   | ▽   | ▽   | Redo | Paste | Copy | Cut | Undo |
+| ▽   | ▽   | ▽   | ▽   | ▽   | ▽    | ▽     | ▽    | ▽   | ▽    |
+| ▽   | ▽   | ▽   | ▽   | ▽   | ▽    | ▽     | ▽    | ▽   | ▽    |
+|-----+-----+-----+-----+-----+------+-------+------+-----+------|
+|     |     | ▽   | ▽   | ▽   | ▽    | ▽     | ▽    |     |      |
+
+*** BtnClip (Button while Clip is on)
+
+Overlay: generic clipboard on both clipboard rows; ▽ is transparent.
+
+| Undo | Cut | Copy | Paste | Redo | Redo | Paste | Copy | Cut | Undo |
+| ▽    | ▽   | ▽    | ▽     | ▽    | ▽    | ▽     | ▽    | ▽   | ▽    |
+| Undo | Cut | Copy | Paste | Redo | Redo | Paste | Copy | Cut | Undo |
+|------+-----+------+-------+------+------+-------+------+-----+------|
+|      |     | ▽    | ▽     | ▽    | ▽    | ▽     | ▽    |     |      |
+
+
 ** Building
 
 
