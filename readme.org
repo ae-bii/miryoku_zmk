@@ -32,6 +32,33 @@ and [[#𝑥MK][𝑥MK]].
 Open [[#issues][issues]] are also noted.
 
 
+** Window Layer
+
+This fork replaces the Mouse layer with an [[https://github.com/nikitabobko/AeroSpace][AeroSpace]] window-management layer, defined in [[miryoku/custom_config.h]].  The layer keeps the ~MOUSE~ id, so the layer lock keys on the other layers are unchanged; only the label is changed to "Window".  Mouse movement, scrolling, and mouse buttons are removed.
+
+Hold Tab (left thumb) to activate.  Every key sends ~ctrl-alt~ (macOS Control+Option) plus the key shown, matching the AeroSpace bindings in [[https://github.com/ae-bii/nix-config/blob/main/modules/darwin/aerospace.nix][nix-config]].  Right hand, inner column to pinky:
+
+|        | Inner           | Index      | Middle     | Ring               | Pinky           |
+|--------+-----------------+------------+------------+--------------------+-----------------|
+| Top    | workspace 1     | workspace 2 | workspace 3 | workspace 4       | workspace 5     |
+| Home   | fullscreen      | focus left | focus down | focus up           | focus right     |
+| Bottom | toggle floating | shrink     | grow       | toggle orientation | tiles/accordion |
+| Thumbs |                 | balance sizes |         |                    |                 |
+
+The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the layer sends the shifted AeroSpace command:
+
+| Key             | With Shift                |
+|-----------------+---------------------------|
+| focus           | move window               |
+| workspace       | move window to workspace  |
+| shrink / grow   | resize opposite axis      |
+| tiles/accordion | flatten workspace tree    |
+
+The arrows are in the same positions as on the Nav layer.
+
+Note: ZMK main has renamed ~nice_nano_v2~ to ~nice_nano@2//zmk~, which the Miryoku workflows do not yet support.  Until that is fixed upstream, set the ~branches~ option to ~zmkfirmware/zmk/v0.3-branch~ when using the [[#build-inputs][Build Inputs]] workflow (e.g. board ~nice_nano_v2~, shield ~temper_left,temper_right~).
+
+
 ** Building
 
 
