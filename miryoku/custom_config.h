@@ -32,13 +32,13 @@
 //   Shift + focus      -> move window              (ctrl-alt-shift-arrow)
 //   Shift + workspace  -> move window to ws        (ctrl-alt-shift-N)
 //   Shift + resize     -> resize vertically        (ctrl-alt-shift-minus/equal)
-//   Shift + parent     -> select child again       (ctrl-alt-shift-slash)
+//   Shift + next win   -> previous window          (ctrl-alt-shift-slash)
 //   Shift + fullscreen -> fullscreen within gaps   (ctrl-alt-shift-enter)
 //
 // Right hand, inner column to pinky:
 //   top:    workspace 1  2  3  4  5
 //   home:   fullscreen | focus left  down  up  right   (arrows match Nav layer)
-//   bottom: floating   | shrink  grow  orientation  parent (select container)
+//   bottom: floating   | shrink  grow  orientation  next window
 //   thumbs: -  last workspace  -
 //
 // The same chords also match the AeroSpace config kept in nix-config

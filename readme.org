@@ -42,7 +42,7 @@ Hold Tab (left thumb) to activate.  Every key sends ~ctrl-alt~ (macOS Control+Op
 |--------+-----------------+------------+------------+--------------------+-----------------|
 | Top    | workspace 1     | workspace 2 | workspace 3 | workspace 4       | workspace 5     |
 | Home   | fullscreen      | focus left | focus down | focus up           | focus right     |
-| Bottom | toggle floating | shrink     | grow       | toggle orientation | select parent   |
+| Bottom | toggle floating | shrink     | grow       | toggle orientation | next window     |
 | Thumbs |                 | last workspace |        |                    |                 |
 
 The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the layer sends the shifted rift command:
@@ -52,7 +52,7 @@ The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the
 | focus           | move window               |
 | workspace       | move window to workspace  |
 | shrink / grow   | resize vertically         |
-| select parent   | select child (descend)    |
+| next window     | previous window           |
 | fullscreen      | fullscreen within gaps    |
 
 The arrows are in the same positions as on the Nav layer.
@@ -126,7 +126,7 @@ rift window management; every key sends ctrl-alt plus the key.  See [[#window-la
 
 | Boot | to Tap | to Extra | to Base   |     | ws 1       | ws 2    | ws 3    | ws 4    | ws 5      |
 | GUI  | Alt    | Ctrl     | Shift     |     | fullscreen | focus ← | focus ↓ | focus ↑ | focus →   |
-|      | AltGr  | to Sym   | to Window |     | float      | shrink  | grow    | orient  | parent    |
+|      | AltGr  | to Sym   | to Window |     | float      | shrink  | grow    | orient  | next win  |
 |------+--------+----------+-----------+-----+------------+---------+---------+---------+-----------|
 |      |        |          |           |     |            | last ws |         |         |           |
 
