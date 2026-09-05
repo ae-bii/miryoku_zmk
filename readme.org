@@ -56,6 +56,12 @@ The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the
 
 The arrows are in the same positions as on the Nav layer.
 
+*** Clipboard Toggle
+
+The clipboard keys (undo, cut, copy, paste, redo on the Nav and Button layers) compile to the macOS chords (~MIRYOKU_CLIPBOARD_MAC~).  A transparent "Clip" flag layer switches them at runtime to Miryoku's generic variant (Shift-Insert, Ctrl-Insert, Shift-Delete, Undo, Again) for use on Linux.
+
+Toggle the flag with the Media layer's top-row inner-column key (hold Esc, then the key where RGB toggle sits on boards with underglow).  The overlay is applied via ZMK conditional layers, so it only affects the clipboard keys while Nav or Button is active and never touches the Base layer.  The flag resets to Mac on power cycle.
+
 Note: ZMK main has renamed ~nice_nano_v2~ to ~nice_nano@2//zmk~, which the Miryoku workflows do not yet support.  Until that is fixed upstream, set the ~branches~ option to ~zmkfirmware/zmk/v0.3-branch~ when using the [[#build-inputs][Build Inputs]] workflow (e.g. board ~nice_nano_v2~, shield ~temper_left,temper_right~).
 
 
