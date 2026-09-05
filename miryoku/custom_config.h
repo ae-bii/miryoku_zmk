@@ -24,21 +24,26 @@
 // Window layer (replaces Mouse; hold Tab)
 // ---------------------------------------------------------------------------
 //
-// AeroSpace (nix-config: modules/darwin/aerospace.nix) binds everything to
-// ctrl-alt (macOS Control+Option) plus arrows, digits and punctuation, so every
-// key here sends that chord directly. The left hand keeps Miryoku's home-row
+// rift (nix-config: modules/darwin/rift.nix) binds everything to ctrl-alt
+// (macOS Control+Option) plus arrows, digits and punctuation, so every key
+// here sends that chord directly. The left hand keeps Miryoku's home-row
 // mods, so holding Shift there turns the same key into the shifted variant:
 //
-//   Shift + focus      -> move window            (ctrl-alt-shift-arrow)
-//   Shift + workspace  -> move window to ws      (ctrl-alt-shift-N)
-//   Shift + resize     -> resize opposite axis   (ctrl-alt-shift-minus/equal)
-//   Shift + layout     -> flatten workspace tree (ctrl-alt-shift-slash)
+//   Shift + focus      -> move window              (ctrl-alt-shift-arrow)
+//   Shift + workspace  -> move window to ws        (ctrl-alt-shift-N)
+//   Shift + resize     -> resize vertically        (ctrl-alt-shift-minus/equal)
+//   Shift + stack      -> unjoin stacked windows   (ctrl-alt-shift-slash)
+//   Shift + fullscreen -> fullscreen within gaps   (ctrl-alt-shift-enter)
 //
 // Right hand, inner column to pinky:
 //   top:    workspace 1  2  3  4  5
 //   home:   fullscreen | focus left  down  up  right   (arrows match Nav layer)
-//   bottom: floating   | shrink  grow  orientation  tiles/accordion
-//   thumbs: -  balance-sizes  -
+//   bottom: floating   | shrink  grow  orientation  stack
+//   thumbs: -  last workspace  -
+//
+// The same chords also match the AeroSpace config kept in nix-config
+// (modules/darwin/aerospace.nix), where the thumb key is balance-sizes and
+// slash cycles tiles/accordion.
 
 #define U_WM(key) &kp LC(LA(key))
 

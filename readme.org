@@ -34,25 +34,26 @@ Open [[#issues][issues]] are also noted.
 
 ** Window Layer
 
-This fork replaces the Mouse layer with an [[https://github.com/nikitabobko/AeroSpace][AeroSpace]] window-management layer, defined in [[miryoku/custom_config.h]].  The layer keeps the ~MOUSE~ id, so the layer lock keys on the other layers are unchanged; only the label is changed to "Window".  Mouse movement, scrolling, and mouse buttons are removed.
+This fork replaces the Mouse layer with a window-management layer for [[https://github.com/acsandmann/rift][rift]] (BSP tiling on macOS), defined in [[miryoku/custom_config.h]].  The layer keeps the ~MOUSE~ id, so the layer lock keys on the other layers are unchanged; only the label is changed to "Window".  Mouse movement, scrolling, and mouse buttons are removed.
 
-Hold Tab (left thumb) to activate.  Every key sends ~ctrl-alt~ (macOS Control+Option) plus the key shown, matching the AeroSpace bindings in [[https://github.com/ae-bii/nix-config/blob/main/modules/darwin/aerospace.nix][nix-config]].  Right hand, inner column to pinky:
+Hold Tab (left thumb) to activate.  Every key sends ~ctrl-alt~ (macOS Control+Option) plus the key shown, matching the rift bindings in [[https://github.com/ae-bii/nix-config/blob/main/modules/darwin/rift.nix][nix-config]] (the AeroSpace config kept there uses the same chords).  Right hand, inner column to pinky:
 
 |        | Inner           | Index      | Middle     | Ring               | Pinky           |
 |--------+-----------------+------------+------------+--------------------+-----------------|
 | Top    | workspace 1     | workspace 2 | workspace 3 | workspace 4       | workspace 5     |
 | Home   | fullscreen      | focus left | focus down | focus up           | focus right     |
-| Bottom | toggle floating | shrink     | grow       | toggle orientation | tiles/accordion |
-| Thumbs |                 | balance sizes |         |                    |                 |
+| Bottom | toggle floating | shrink     | grow       | toggle orientation | toggle stack    |
+| Thumbs |                 | last workspace |        |                    |                 |
 
-The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the layer sends the shifted AeroSpace command:
+The left hand keeps the Miryoku home-row mods.  Holding Shift there while on the layer sends the shifted rift command:
 
 | Key             | With Shift                |
 |-----------------+---------------------------|
 | focus           | move window               |
 | workspace       | move window to workspace  |
-| shrink / grow   | resize opposite axis      |
-| tiles/accordion | flatten workspace tree    |
+| shrink / grow   | resize vertically         |
+| toggle stack    | unjoin stacked windows    |
+| fullscreen      | fullscreen within gaps    |
 
 The arrows are in the same positions as on the Nav layer.
 
@@ -121,13 +122,13 @@ Arrows and navigation on the right hand; clipboard on the top row.
 
 *** Window (hold Tab)
 
-AeroSpace window management; every key sends ctrl-alt plus the key.  See [[#window-layer][Window Layer]].
+rift window management; every key sends ctrl-alt plus the key.  See [[#window-layer][Window Layer]].
 
 | Boot | to Tap | to Extra | to Base   |     | ws 1       | ws 2    | ws 3    | ws 4    | ws 5      |
 | GUI  | Alt    | Ctrl     | Shift     |     | fullscreen | focus ← | focus ↓ | focus ↑ | focus →   |
-|      | AltGr  | to Sym   | to Window |     | float      | shrink  | grow    | orient  | tiles/acc |
+|      | AltGr  | to Sym   | to Window |     | float      | shrink  | grow    | orient  | stack     |
 |------+--------+----------+-----------+-----+------------+---------+---------+---------+-----------|
-|      |        |          |           |     |            | balance |         |         |           |
+|      |        |          |           |     |            | last ws |         |         |           |
 
 *** Media (hold Esc)
 
